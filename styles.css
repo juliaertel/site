@@ -30,3 +30,4 @@
 .audience .eyebrow.dark{color:var(--white)}.audience-copy>p:not(.eyebrow),.audience-note p{color:var(--white)}.area-tags span{border-color:rgba(255,255,255,.55);color:var(--white)}
 .audience-frames{display:block}.audience-frames img{aspect-ratio:16/9;max-width:520px;width:100%}
 @media(min-width:901px){.audience{grid-template-columns:1fr .8fr}}
+.desktop-nav .nav-cta:hover{color:var(--black)}
