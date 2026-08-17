@@ -51,7 +51,7 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 }
 
 // Substitua o valor abaixo pelo link final do seu checkout Hotmart.
-const HOTMART_CHECKOUT_URL = "";
+const HOTMART_CHECKOUT_URL = "https://pay.hotmart.com/J107159670P";
 
 document.querySelectorAll("[data-checkout]").forEach((link) => {
   if (HOTMART_CHECKOUT_URL) {
