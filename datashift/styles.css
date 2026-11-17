@@ -108,14 +108,16 @@ h2 { max-width: 650px; margin: 14px 0 0; font-size: clamp(34px, 5vw, 64px); line
 .feature-row:nth-child(even) .feature-demo { order: 1; }
 .feature-copy h3 { max-width: 480px; margin: 12px 0 12px; font-size: clamp(30px, 4vw, 46px); line-height: 1; letter-spacing: -.06em; }
 .feature-copy p { max-width: 470px; color: var(--muted); }
-.feature-demo { padding: 22px; border: 1px solid var(--purple-line); border-radius: 22px; background: var(--purple-soft); }
-.demo-window { overflow: hidden; border-radius: 16px; background: var(--white); border: 1px solid #ddd2eb; }
-.demo-window-head { display: flex; align-items: center; justify-content: space-between; padding: 13px 15px; color: var(--white); background: var(--purple-deep); font-size: 11px; font-weight: 700; }
+.feature-demo { width: 100%; min-width: 0; padding: 22px; border: 1px solid var(--purple-line); border-radius: 22px; background: var(--purple-soft); }
+.feature-row > *, .feature-copy, .demo-window, .chat-body, .chat-msg, .plan-board, .resume-row, .prep-item { min-width: 0; }
+.demo-window { width: 100%; overflow: hidden; border-radius: 16px; background: var(--white); border: 1px solid #ddd2eb; }
+.demo-window-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 13px 15px; color: var(--white); background: var(--purple-deep); font-size: 11px; font-weight: 700; }
 .demo-window-head span { color: var(--lime); font: 500 9px 'DM Mono', monospace; text-transform: uppercase; }
 .demo-content { padding: 17px; }
 .demo-chat-body { padding: 14px; gap: 9px; }
 .demo-chat-body .chat-msg { max-width: 91%; padding: 10px 12px; font-size: 11px; }
 .demo-chat-body .chat-msg small { font-size: 8px; }
+.demo-chat-body .chat-msg, .resume-row, .prep-item, .plan-summary span { overflow-wrap: anywhere; }
 .job-row, .week-card, .resume-row, .portfolio-row, .interview-row { padding: 12px; border: 1px solid var(--purple-line); border-radius: 10px; background: #fcfbfe; }
 .job-row + .job-row, .week-card + .week-card, .resume-row + .resume-row, .portfolio-row + .portfolio-row, .interview-row + .interview-row { margin-top: 9px; }
 .job-row strong, .week-card strong, .resume-row strong, .portfolio-row strong, .interview-row strong { display: block; margin-bottom: 4px; font-size: 12px; }
@@ -222,11 +224,12 @@ h2 { max-width: 650px; margin: 14px 0 0; font-size: clamp(34px, 5vw, 64px); line
   .section-heading { grid-template-columns: 1fr; gap: 24px; }
   .feature-row { grid-template-columns: 1fr; gap: 30px; }
   .feature-row:nth-child(even) .feature-copy, .feature-row:nth-child(even) .feature-demo { order: initial; }
-  .feature-demo { max-width: 620px; }
+  .feature-demo { width: 100%; max-width: 620px; }
   .steps { grid-template-columns: repeat(2, 1fr); row-gap: 34px; }
   .legal-layout { grid-template-columns: 185px minmax(0, 1fr); gap: 42px; }
 }
 @media (max-width: 700px) {
+  body { overflow-x: hidden; }
   .shell { width: min(var(--max), calc(100% - 40px)); }
   .nav { min-height: 68px; }
   .menu-button { display: block; }
@@ -244,6 +247,27 @@ h2 { max-width: 650px; margin: 14px 0 0; font-size: clamp(34px, 5vw, 64px); line
   .question-card, .audience-card { min-height: auto; }
   .before-after { grid-template-columns: 1fr; }
   .week-grid { grid-template-columns: 1fr 1fr; }
+  .feature-demo { padding: 12px; }
+  .demo-window-head { align-items: flex-start; }
+  .chat-body, .demo-chat-body { width: 100%; }
+  .chat-table-wrap { overflow: hidden; padding: 8px; }
+  .chat-table { width: 100%; min-width: 0; table-layout: fixed; font-size: 8px; }
+  .chat-table th { padding: 6px 4px; font-size: 7px; }
+  .chat-table td { padding: 7px 4px; overflow-wrap: anywhere; word-break: break-word; }
+  .study-table-wrap { overflow: hidden; }
+  .study-table, .study-table thead, .study-table tbody, .study-table tr, .study-table th, .study-table td { display: block; width: 100%; }
+  .study-table thead { display: none; }
+  .study-table tr { padding: 9px 8px; border-top: 1px solid var(--line); }
+  .study-table tr:first-child { border-top: 0; }
+  .study-table td, .study-table td:first-child, .study-table td:nth-child(2) { width: auto; padding: 2px 0; border-top: 0; }
+  .study-table td::before { display: inline-block; min-width: 92px; margin-right: 5px; color: var(--purple); font: 500 7px 'DM Mono', monospace; letter-spacing: .03em; text-transform: uppercase; vertical-align: top; }
+  .study-table td:nth-child(1)::before { content: 'Período'; }
+  .study-table td:nth-child(2)::before { content: 'Foco'; }
+  .study-table td:nth-child(3)::before { content: 'Estudar'; }
+  .study-table td:nth-child(4)::before { content: 'Entrega'; }
+  .study-table td { overflow-wrap: anywhere; }
+  .plan-summary { grid-template-columns: 1fr; }
+  .resume-row { min-height: auto; }
   .access-card { padding: 34px 20px; }
   .footer-grid { align-items: start; flex-direction: column; }
   .legal-main { padding: 60px 0 75px; }
