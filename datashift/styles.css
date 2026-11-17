@@ -42,6 +42,10 @@ h1 { max-width: 650px; margin-bottom: 22px; font-size: clamp(48px, 7vw, 88px); l
 h1 em { color: var(--purple); font-style: normal; }
 .hero-intro { max-width: 600px; color: var(--muted); font-size: 18px; }
 .hero-intro strong { color: var(--ink); font-weight: 700; }
+.product-callout { display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; align-items: start; max-width: 600px; margin-top: 24px; padding: 16px 18px; border: 1px solid rgba(109,40,217,.18); border-left: 5px solid var(--lime); border-radius: 16px; background: rgba(255,255,255,.82); box-shadow: 0 12px 28px rgba(36,20,63,.08); }
+.product-callout-label { align-self: start; padding: 6px 9px; border-radius: 999px; color: var(--ink); background: var(--lime); font: 500 10px/1 'DM Mono', monospace; letter-spacing: .09em; text-transform: uppercase; }
+.product-callout p { margin: 0; color: var(--ink); font-size: 18px; line-height: 1.35; }
+.product-callout p strong { font-weight: 800; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 1px solid var(--purple); border-radius: 999px; color: var(--white); background: var(--purple); font-size: 12px; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(109,40,217,.18); }
@@ -233,6 +237,8 @@ h2 { max-width: 650px; margin: 14px 0 0; font-size: clamp(34px, 5vw, 64px); line
   .hero { padding: 68px 0 70px; }
   h1 { font-size: clamp(46px, 14vw, 72px); }
   .hero-intro { font-size: 16px; }
+  .product-callout { grid-template-columns: 1fr; gap: 9px; }
+  .product-callout p { font-size: 16px; }
   .section { padding: 70px 0; }
   .question-grid, .audience-grid, .steps { grid-template-columns: 1fr; }
   .question-card, .audience-card { min-height: auto; }
